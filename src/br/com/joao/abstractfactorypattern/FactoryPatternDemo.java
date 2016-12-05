@@ -5,10 +5,8 @@ import br.com.joao.abstractfactorypattern.Shape;
 public class FactoryPatternDemo {
 
 	public static void main(String[] args) {
-
-		FactoryProducer factoryProducer = new FactoryProducer();
 		
-		AbstractFactory shapeFactory = factoryProducer.getFactory("shape");
+		AbstractFactory shapeFactory = FactoryProducer.getFactory("shape");
 
 		Shape shape1 = shapeFactory.getShape("circle");
 
@@ -23,7 +21,7 @@ public class FactoryPatternDemo {
 		shape3.draw();
 		
 		
-		AbstractFactory colorFactory = factoryProducer.getFactory("color");
+		AbstractFactory colorFactory = FactoryProducer.getFactory("color");
 
 		Color color1 = colorFactory.getColor("red");
 
