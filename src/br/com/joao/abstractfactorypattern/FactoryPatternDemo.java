@@ -6,7 +6,9 @@ public class FactoryPatternDemo {
 
 	public static void main(String[] args) {
 
-		ShapeFactory shapeFactory = new ShapeFactory();
+		FactoryProducer factoryProducer = new FactoryProducer();
+		
+		AbstractFactory shapeFactory = factoryProducer.getFactory("shape");
 
 		Shape shape1 = shapeFactory.getShape("circle");
 
@@ -19,6 +21,21 @@ public class FactoryPatternDemo {
 		Shape shape3 = shapeFactory.getShape("square");
 
 		shape3.draw();
+		
+		
+		AbstractFactory colorFactory = factoryProducer.getFactory("color");
+
+		Color color1 = colorFactory.getColor("red");
+
+		color1.fill();
+
+		Color color2 = colorFactory.getColor("green");
+
+		color2.fill();
+		
+		Color color3 = colorFactory.getColor("blue");
+
+		color3.fill();
 	}
 
 }
